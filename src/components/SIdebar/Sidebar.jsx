@@ -16,13 +16,16 @@ const Sidebar = () => {
             </div>
            {
                users.filter(data => {
+                //    console.log(data)
                    if(filterUser === ''){
                        return data;
                    }else if(data.login.toLowerCase().includes(filterUser.toLowerCase())){
                        return data
-                   } 
+                   }
+                   
                })
                .map((user) => {
+                   
                    return(
                        <div key={user.id} className="flex  items-center my-3 cursor-pointer " onClick={()=> {dispatch(getUser(user.login)); setFilterUser('')}} >
                            <img src={user.avatar_url} className="h-8 w-8 rounded-full mx-4" alt="" />

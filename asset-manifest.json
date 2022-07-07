@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/react-app/static/css/main.45027d8a.chunk.css",
+    "main.js": "/react-app/static/js/main.d0b0987d.chunk.js",
+    "main.js.map": "/react-app/static/js/main.d0b0987d.chunk.js.map",
+    "runtime-main.js": "/react-app/static/js/runtime-main.493bdf02.js",
+    "runtime-main.js.map": "/react-app/static/js/runtime-main.493bdf02.js.map",
+    "static/js/2.f4a6bea7.chunk.js": "/react-app/static/js/2.f4a6bea7.chunk.js",
+    "static/js/2.f4a6bea7.chunk.js.map": "/react-app/static/js/2.f4a6bea7.chunk.js.map",
+    "static/js/3.eeb3437d.chunk.js": "/react-app/static/js/3.eeb3437d.chunk.js",
+    "static/js/3.eeb3437d.chunk.js.map": "/react-app/static/js/3.eeb3437d.chunk.js.map",
+    "index.html": "/react-app/index.html",
+    "static/css/main.45027d8a.chunk.css.map": "/react-app/static/css/main.45027d8a.chunk.css.map",
+    "static/js/2.f4a6bea7.chunk.js.LICENSE.txt": "/react-app/static/js/2.f4a6bea7.chunk.js.LICENSE.txt",
+    "static/media/calender.7827a0b6.svg": "/react-app/static/media/calender.7827a0b6.svg",
+    "static/media/github-social.033edaef.png": "/react-app/static/media/github-social.033edaef.png",
+    "static/media/location.f88e5684.svg": "/react-app/static/media/location.f88e5684.svg",
+    "static/media/twitter.4584c6ae.svg": "/react-app/static/media/twitter.4584c6ae.svg",
+    "static/media/visit_link.5ce77c95.svg": "/react-app/static/media/visit_link.5ce77c95.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.493bdf02.js",
+    "static/js/2.f4a6bea7.chunk.js",
+    "static/css/main.45027d8a.chunk.css",
+    "static/js/main.d0b0987d.chunk.js"
+  ]
+}

@@ -9,10 +9,13 @@ import {ReactComponent as TwitterIcon} from '../assets/icons/twitter.svg';
 import { fetchRepos } from '../redux/actions/reposotoriesActions';
 import { useDispatch } from 'react-redux';
 const UserProfile = () => {
-    const {user} = useSelector(state => state.users);
-    const dispatch = useDispatch()
+    const {user,loading} = useSelector(state => state.users);
+    
+    const dispatch = useDispatch();
     return (
-        <div className="overflow-y-auto ">
+        <>
+            {loading && <Loader/>}
+            <div className="overflow-y-auto ">
             <div className="relative">
                 <img className="w-screen h-64 object-cover" src={githubImg} alt="" />
                 <img className="h-20 w-20 rounded-full ring-1 ring-offset-2 ring-gray-50 absolute -bottom-10 left-10" src={user.avatar_url} alt="" />
@@ -77,6 +80,7 @@ const UserProfile = () => {
             </div>
             
         </div>
+    </>
     )
 }
 
@@ -106,4 +110,26 @@ const Box = (props) => {
     </div>
     )
 }
+
+const Loader = () => {
+    return (
+      <>
+        <div className="absolute w-full h-full grid place-items-center bg-gray-900 bg-opacity-30 z-20">
+          <div className="w-24 h-24 relative transform -translate-x-1/2 loader">
+            <svg className="circular-loader" viewBox="25 25 50 50">
+              <circle
+                className="loader-path"
+                cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+                stroke="#70c542"
+                strokeWidth="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </>
+    );
+  };
 export default UserProfile

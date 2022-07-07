@@ -1,8 +1,8 @@
-import { FETCH_DATA, GET_USER, GET_REPOSOTORIES } from "../actions/actionTypes";
+import { FETCH_DATA, GET_USER, GET_REPOSOTORIES, LOADING } from "../actions/actionTypes";
 
 const initialState = {
     users:[],
-    userSelected:false,
+    loading:true,
     user:{},
     getRepos:[]
 }
@@ -18,12 +18,17 @@ const initialState = {
             return{
                 ...state,
                 user:payload,
-                userSelected:true
+                loading:false
             }
         case GET_REPOSOTORIES:
             return{
                 ...state,
                 getRepos:payload
+            }
+        case LOADING:
+            return{
+                ...state,
+                loading:true
             }
         default:
             return state;

@@ -9,22 +9,23 @@ const Sidebar = () => {
     useEffect(() => {
         dispatch(fetchUsers())
     }, [dispatch])
+    const filteredUsers = users.filter(data => {
+        //    console.log(data)
+           if(filterUser === ''){
+               return data;
+           }else if(data.login.toLowerCase().includes(filterUser.toLowerCase())){
+               return data
+           }
+           
+       })
     return (
         <div className="flex overflow-y-auto  flex-col px-10 py-5">
             <div>
                 <input type="text" className="px-1 my-2 py-2 rounded border border-gray-200 shadow" placeholder="search user" onChange={e => setFilterUser(e.target.value)} value={filterUser}/>
             </div>
-           {
-               users.filter(data => {
-                //    console.log(data)
-                   if(filterUser === ''){
-                       return data;
-                   }else if(data.login.toLowerCase().includes(filterUser.toLowerCase())){
-                       return data
-                   }
-                   
-               })
-               .map((user) => {
+           {filteredUsers.length>0 ?(
+               
+               filteredUsers.map((user) => {
                    
                    return(
                        <div key={user.id} className="flex  items-center my-3 cursor-pointer " onClick={()=> {dispatch(getUser(user.login)); setFilterUser('')}} >
@@ -33,6 +34,8 @@ const Sidebar = () => {
                        </div>
                    )
                })
+               ) : (<p>no user found</p>)
+               
            }
         </div>
     )

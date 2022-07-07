@@ -1,4 +1,4 @@
-import { FETCH_DATA, GET_USER} from "./actionTypes";
+import { FETCH_DATA, GET_USER, LOADING} from "./actionTypes";
 import { baseUrl } from "../../api/api";
 const fetchUserAction = (data) => {
     return {
@@ -10,6 +10,13 @@ const fetchUserAction = (data) => {
 const getUserAction = (data) => {
     return{
         type:GET_USER,
+        payload:data
+    }
+}
+
+const loadingAction = (data) => {
+    return{
+        type:LOADING,
         payload:data
     }
 }
@@ -31,7 +38,8 @@ export const fetchUsers = () => {
 }
 
 export const getUser = (username) => {
-    return async (dispatch) => {
+   return async (dispatch) => {
+        dispatch(loadingAction(username))
         await fetch(`${baseUrl}/users/${username}`)
             .then(response => response.json())
             .then(data => dispatch(getUserAction(data)))
